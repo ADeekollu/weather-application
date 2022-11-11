@@ -1,0 +1,90 @@
+* {
+box-sizing: border-box;
+background-color: snow;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+ #title {
+    text-align:center;
+    border: 5px solid aliceblue;
+    background-color: darkblue;
+    color: snow;    
+} 
+
+#cityInput {
+    height: 2rem;
+}
+
+
+#button {
+    height: 2rem;
+    text-align: center;
+}
+.card { 
+    margin: 5px;
+    padding: 5px;
+     text-align: center; 
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#weatherContainer {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%; 
+    margin-top: 8%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 1000px;
+    border: 5px solid grey;
+    border-radius: 10px;
+}
+
+#iconsContainer {
+    position: relative;;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 120%;
+    border: 5px solid rgb(3, 43, 23);
+    border-radius: 10px;
+}
+
+.icons {
+
+    display: inline-block;
+    
+    height: 250px;
+    width: 200px;
+    margin: 10px;
+    border: 5px solid darkgray;
+}
+
+.image, .imgClass {
+    height: 100px;
+    width: 100%;
+}
+
+.weather {
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.temp, .wind, .humidity {
+    text-align: center;
+    
+    border-radius: 5px;
+    height: 25px;
+    width: 10px;
+    /* margin: 0;
+    margin-bottom: 5px;
+    margin-left: 5px; */
+} 
+
+ 
