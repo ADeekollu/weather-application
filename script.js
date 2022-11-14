@@ -92,11 +92,11 @@ function getWeather() {
             $("#forecastIcon4").attr({src:"http://openweathermap.org/img/wn/" + data.list[3].weather[0].icon + "@2x.png", "width":"50px", "height":"50px"});
             $("#forecastIcon5").attr({src:"http://openweathermap.org/img/wn/" + data.list[4].weather[0].icon + "@2x.png", "width":"50px", "height":"50px"});
 
-            $("#temp1").text("Temp: " + Number(data.list[0].main.temp - 273.15).toFixed(1) + "°C");
-            $("#temp2").text("Temp: " + Number(data.list[1].main.temp - 273.15).toFixed(1) + "°C");
-            $("#temp3").text("Temp: " + Number(data.list[2].main.temp - 273.15).toFixed(1) + "°C");
-            $("#temp4").text("Temp: " + Number(data.list[3].main.temp - 273.15).toFixed(1) + "°C");
-            $("#temp5").text("Temp: " + Number(data.list[4].main.temp - 273.15).toFixed(1) + "°C");
+            $("#temp1").text("Temp: " + Number((data.list[0].main.temp - 273.15) * (1.8) + 32).toFixed(1) + "°F");
+            $("#temp2").text("Temp: " + Number((data.list[1].main.temp - 273.15) * (1.8) + 32).toFixed(1) + "°F");
+            $("#temp3").text("Temp: " + Number((data.list[2].main.temp - 273.15) * (1.8) + 32).toFixed(1) + "°F");
+            $("#temp4").text("Temp: " + Number((data.list[3].main.temp - 273.15) * (1.8) + 32).toFixed(1) + "°F");
+            $("#temp5").text("Temp: " + Number((data.list[4].main.temp - 273.15) * (1.8) + 32).toFixed(1) + "°F");
 
             $("#hum1").text("Humidity: " + Number(data.list[0].main.humidity).toFixed(0) + "%");
             $("#hum2").text("Humidity: " + Number(data.list[1].main.humidity).toFixed(0) + "%");
