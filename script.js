@@ -1,4 +1,5 @@
 
+// global variables 
 
 var searchButton = document.getElementById("button")
 var apiKey = "601c8b09d7aad2ea141da9a258a4c34d"
@@ -25,6 +26,8 @@ function renderCityList() {
 }
 renderCityList();
 
+// save city input into local storage
+
 function handleFormSubmit(event) {
     event.preventDefault()
     cityInputEl = $("#cityInput").val().trim()
@@ -41,6 +44,8 @@ function handleFormSubmit(event) {
 }
 cityFormEl.on("submit", handleFormSubmit)
 
+
+// fetch call and getting back current day and 5 day weather forecast
 
 function getWeather() {   
     var requestUrlCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInputEl + "&units=imperial&appid=" + apiKey;
@@ -87,20 +92,29 @@ function getWeather() {
             $("#forecastIcon4").attr({src:"http://openweathermap.org/img/wn/" + data.list[3].weather[0].icon + "@2x.png", "width":"50px", "height":"50px"});
             $("#forecastIcon5").attr({src:"http://openweathermap.org/img/wn/" + data.list[4].weather[0].icon + "@2x.png", "width":"50px", "height":"50px"});
 
+            $("#temp1").text("Temp: " + Number(data.list[0].main.temp - 273.15).toFixed(1) + "°C");
+            $("#temp2").text("Temp: " + Number(data.list[1].main.temp - 273.15).toFixed(1) + "°C");
+            $("#temp3").text("Temp: " + Number(data.list[2].main.temp - 273.15).toFixed(1) + "°C");
+            $("#temp4").text("Temp: " + Number(data.list[3].main.temp - 273.15).toFixed(1) + "°C");
+            $("#temp5").text("Temp: " + Number(data.list[4].main.temp - 273.15).toFixed(1) + "°C");
+
+            $("#hum1").text("Humidity: " + Number(data.list[0].main.humidity).toFixed(0) + "%");
+            $("#hum2").text("Humidity: " + Number(data.list[1].main.humidity).toFixed(0) + "%");
+            $("#hum3").text("Humidity: " + Number(data.list[2].main.humidity).toFixed(0) + "%");
+            $("#hum4").text("Humidity: " + Number(data.list[3].main.humidity).toFixed(0) + "%");
+            $("#hum5").text("Humidity: " + Number(data.list[4].main.humidity).toFixed(0) + "%");
+
+            $("#wind1").text("Wind: " + Number(data.list[0].wind.speed).toFixed(2) + "mph");
+            $("#wind2").text("Wind: " + Number(data.list[1].wind.speed).toFixed(2) + "mph");
+            $("#wind3").text("Wind: " + Number(data.list[2].wind.speed).toFixed(2) + "mph");
+            $("#wind4").text("Wind: " + Number(data.list[3].wind.speed).toFixed(2) + "mph");
+            $("#wind5").text("Wind: " + Number(data.list[4].wind.speed).toFixed(2) + "mph");
+            console.log()
             
 
         })
     })
 }
-
-        // for (var i = 0; i < 5; i++) {
-        // document.getElementById("day_" + (i+1) + "_temp").innerHTML = "Temp :" + Number(data.list[i].main.temp - 288.53).toFixed(1) + "°"
-        // document.getElementById("day_" + (i+1) + "_humidity").innerHTML = "Humidity :" + Number(data.list[i].main.humidity) + "%"
-
-
-
-
-
 
 cityFormEl.on("submit", getWeather)
 
